@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">TO-DO-LIST</h1>
+              
+               <form>
+                  <div class="input_group">
+                  <input type="text" name="" style="width: 30vw; margin-bottom: 20px;" id="item">
+                  </div>
+                  <div class="button_group">
+                        <input type="button" value="Add" style="width: 10vw;" id="button" onclick="addItem()">
+                  </div>
+              </form>
+
+         <div class="list">
+             <ul id="list_item"></ul>
+         </div>  
+
+    </div>
+    <script>
+       let item=document.getElementById("item");
+       let button=document.getElementById("button");
+
+ console.log("conected");
+    
+
+       function addItem(){
+        if(item.value !=" "){
+            let make_li=document.createElement('li');
+            make_li.appendChild(document.createTextNode(item.value));
+           
+            let list_item=document.getElementById('list_item');
+            list_item.appendChild(make_li);
+            item.value=" ";
+       
+            make_li.onclick=function(){
+                make_li.parentNode.removeChild(make_li);
+            }
+                         
+
+
+
+    }
+    else
+    {
+           alert("add something new....!")
+       }
+
+       }
+
+
+
+
+     
+
+
+
+
+    </script>
+</body>
+</html>
